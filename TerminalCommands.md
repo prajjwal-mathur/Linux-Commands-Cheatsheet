@@ -1,0 +1,28 @@
+## Commands known:
+- To see what's in the file(first to last): [`cat <location/filename>`](https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/)
+- To look at a file backwards, starting with the last line: `tac <location/filename>`
+- To show the first 10 lines(default) of a file: [`head <location/filename>`](https://linuxize.com/post/linux-head-command/#head-command-syntax)
+- To show the first 'n' lines of a file: `head -n <location/filename>`
+- To show the last 10 lines(default) of a file: [`tail <location/filename>`](https://linuxize.com/post/linux-head-command/#head-command-syntax)
+- To show the last 'n' lines of a file: `tail -n <location/filename>`
+- To view documentation: [`man <program name like python>`](https://www.geeksforgeeks.org/man-command-in-linux-with-examples/)
+- To gain root/administrative access(prompts for password): `sudo`  
+- To stop the graphical interface: `sudo systemctl stop gdm (or sudo telinit 3)`
+- To start the graphical interface: `sudo systemctl start gdm (or sudo telinit 5)`
+- To halt the system(requires superuser access): `shutdown -h`
+- To reboot the system(requires superuser access): `shutdown -r`
+- When administering a multi-user system, we have the option of notifying all users prior to shutdown:
+`sudo shutdown -h <time> "Message"`
+- To find the address of an installed program: `which <app>` or `whereis <app>`
+- To display the print working directory: `pwd`
+- To go to another directory(cd ~ changes the home directory, works like bookmark): `cd` or `cd ~`
+- To go back to home directory: `cd ..`
+- To go back to previous directory: `cd -`
+- To list all the contents of working directory: `ls`
+- To list all the contents including hidden files of working directory: `ls -a`
+- To get the tree view of the filesystem(`sudo apt install tree` for first time): `tree`
+- To just get the tree view of just directories not file names: `tree -d`
+- `cd` command remembers the moving history, to see the history: `dirs`
+- To push a directory in history for easy use: `pushd </foldername>`
+- To delete the directory added recently from history: `popd` 
+- To create an empty file: `touch <filename>`

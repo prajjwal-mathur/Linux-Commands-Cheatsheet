@@ -26,3 +26,4 @@
 - To push a directory in history for easy use: `pushd </foldername>`
 - To delete the directory added recently from history: `popd` 
 - To create an empty file: `touch <filename>`
+- To display and redirect ouput of a command: `tee`

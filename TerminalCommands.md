@@ -15,8 +15,8 @@
 `sudo shutdown -h <time> "Message"`
 - To find the address of an installed program: `which <app>` or `whereis <app>`
 - To display the print working directory: `pwd`
-- To change the directory to home directory from the current working directory(current work directory to users home directory): `cd` or `cd ~`
-- To change the directory to parent directory of the current working directory: `cd ..`
+- To change the directory to home directory from the current working directory(current working directory replaces terminal's home directory in history): `cd` or `cd ~`
+- To go to parent directory of the current working directory: `cd ..`
 - To go back to previous directory: `cd -`
 - To list all the contents of working directory: `ls`
 - To list all the contents including hidden files of working directory: `ls -a`

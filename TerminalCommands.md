@@ -15,8 +15,8 @@
 `sudo shutdown -h <time> "Message"`
 - To find the address of an installed program: `which <app>` or `whereis <app>`
 - To display the print working directory: `pwd`
-- To go to another directory(cd ~ changes the home directory, works like bookmark): `cd` or `cd ~`
-- To go back to home directory: `cd ..`
+- To change the directory to home directory from the current working directory(current working directory replaces terminal's home directory in history): `cd` or `cd ~`
+- To go to parent directory of the current working directory: `cd ..`
 - To go back to previous directory: `cd -`
 - To list all the contents of working directory: `ls`
 - To list all the contents including hidden files of working directory: `ls -a`
@@ -26,6 +26,7 @@
 - To push a directory in history for easy use: `pushd </foldername>`
 - To delete the directory added recently from history: `popd` 
 - To create an empty file: `touch <filename>`
+- To display and redirect ouput of a command: [`tee`](https://linuxize.com/post/linux-tee-command/)
 - To create a new file from the terminal: `touch filename.extension`
 - To create a new file with specific date(time: 24-hour format; LowerLimit of year: 1901):
     - In string format: `touch -d "YYYY-MM-DD hh:mm:ss" filename.extension`

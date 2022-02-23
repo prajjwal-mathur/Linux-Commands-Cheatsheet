@@ -59,3 +59,42 @@ Both the above commands create a text file "xyz.txt" with creation date as 02-Ja
 - To see the processes in tree-view: `pstree`
 - To display all jobs running in background(shows the job ID, state, and command name): `jobs`
 - To display all jobs running in background(adds the PID of the background jobs to normal jobs commands): `jobs -l`
+- To display information about mounted filesystems, including the filesystem type, and usage statistics about currently used and available space: `df -Th`
+- To compare two text files(for binary: replace with `cmp`): `diff [options] <file1> <file2>`
+    > Options
+    - `-c` : Provides a list of differences with 3 lines of context
+    - `-r` : Used to recursively compare subdirectories along with present directory
+    - `-i` : To ignore the case of letters
+    - `-w` : To ignore white spaces and tabs
+    - `-q` : To return only if files are different without listing differences 
+- To compare three text files with one as reference: `diff3 <file1> <common-reference-file> <file3>`
+- To get the extension of a file: `file <fileName>`
+- To sync files between hosts: [`rsync`](https://www.geeksforgeeks.org/rsync-command-in-linux-with-examples/)
+- Two Ways to add lines to text:
+    - To add a line to a text file: `echo message>filename`
+    - To append the line to text file: `echo message2>>filename`
+        - Example(both ways do the same thing):
+            - echo message 1 > myfile<br/>echo message 2 >> myfile<br/>echo message 3 >> myfile
+            - cat << EOF > myfile<br/>> message 1</br>> message 2<br/>> message 3<br/>> EOF
+            > Above both codes do the same:<br/>
+            message 1<br/>message 2<br/>message 3 
+- To get tutorial about vim (Vi IMproved): `vimtutor`
+    - Commands in vim editor:
+        - Start the editor and edit file: `vi filename`
+        - Start and edit file in recovery mode(recover file after a crash): `vi -r filename`
+        - Read in file and insert at current position: `:r fileName`
+        - Write to the file: `:w`
+        - Write out to file: `:w file`
+        - To overwrite file: `:w! file`
+        - To exit and write out modified file: `:x` or `:wq`
+        - To quit: `:q`	
+        - To quit without saving: `:q!`	
+        - To count the words in a file in vim editor: `:! wc %`
+- To identify current user: `whoami`
+- To identify all logged-on user: `who`
+- To retrieve currently defined aliases: `alias`
+- To define a new user: `sudo useradd <username>`
+- To delete a user: `sudo userdel <username>`
+- To temporary become a super-user: `su`
+- To view the files present in the current directory in the long listing format: `ls -l`
+

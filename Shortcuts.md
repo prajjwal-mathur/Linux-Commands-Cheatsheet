@@ -9,3 +9,6 @@
 - To stop the terminal from infinite loop: `CTRL + C` or `CTRL + Z`(suspends the process)
 - To exit a program in terminal: `CTRL + D`
 - To switch window of same program: `ALT + F6`
+- To backspace: `CTRL + H`
+- To delete the word before cursor: `CTRL + W`
+- To auto-complete files, directories, etc: `Tab`

@@ -97,4 +97,110 @@ Both the above commands create a text file "xyz.txt" with creation date as 02-Ja
 - To delete a user: `sudo userdel <username>`
 - To temporary become a super-user: `su`
 - To view the files present in the current directory in the long listing format: `ls -l`
-
+- When working with compressed files, most associated utilities required to work have 'z' prefixed to their name:
+    - To view a compressed file: `zcat compress_file`
+    - To page through a compressed file(it's a filter): `zless compressed-file` or `zmore compressed-file`
+    - To search inside a compressed file(-i ignores the case): `zgrep -i "whatever-you-want-to-search" compressed-file`
+    - To compare two compressed files: zdiff file1 file2
+- To sort the lines, according to the characters at the beginning of each line: `sort <filename>`
+- To combine the two files and sort the lines, then display the output to the terminal: `cat file1 file2 | sort`
+- To sort the lines in reverse order: `sort -r <filename>`
+- To sort the lines by the 3rd field on each line instead of the beginning: `sort -k 3 <filename>`
+- To sort the list with removed duplicates, only uniques: `sort -u <filename>`
+- To remove duplicate entries from multiple files at once: `sort file1 file2 | uniq > file3` or sort -u file1 file2 > file3
+- To count the number of duplicate entries: `uniq -c filename`
+- To paste contents from two files in a table format(first line of first file will correspond to first line of second file in a row): `paste file1 file2`
+- To paste contents from two files with a delimiter like dash(-)or colon(:)(For example: xyz-123, in this xyz is from first and 123 is from second): `paste -d "delimiter" file1 file2`
+- If two files have a common column and you want to merge them in a single file: `join file1 file2`
+- To split a text file into equal files of n lines(the 100 newfile names will be suffixed with xx which aa..ab..ac): `split -n "number of files to be splitted in" <file_that_needs_to_be_split> <newfile>`
+- Regex(REGular EXpression; used for searching a particular pattern):
+    - Match any single character: `.`
+    - Match a or z: `a|z`
+    - Match end of a line: `$`
+    - Match beginning of a line: `^`
+    - Match a preceding item 0 or more times: `*`
+- To search for a pattern in a file and print all matching lines: `grep [pattern] <filename>`
+- To print lines that exclude a certain pattern: `grep -v [pattern] <filename>`
+- TO print the lines that contain the numbers 0 through 9: `grep [0-9] <filename>`
+- To print context of lines (specified number of lines above and below the pattern) for matching the pattern. Here, the number of lines is specified as n: `grep -C n [pattern] <filename>`
+- To convert lower case to upper case(tr stands for translate): `cat filename | tr a-z A-Z`
+- To display the number of lines: `wc -l filename` 
+- To display the number of bytes: `wc -c filename`
+- To display the number of words: `wc -w filename`
+- To check the status of the remote host: `ping <hostname>`
+- To show current routing table: `route –n` or `ip route`
+- To add a static route: `route add -net address` or `ip route add`
+- To delete a static route: `route del -net address` or `ip route del`
+- To download a web-page: `wget <url>`
+- To read a web-page from terminal: `curl <url>`
+- To get the contents of a web page and store it to a file: `curl -o filename_to_be_saved url`
+- To copy a local file to a remote system in the command prompt: `scp <localfile> <user@remotesystem>:/home/user/`
+- To make a shell script for easy automation, you need a .sh file
+- Functions in a script file: `function(){ echo "This is a sample function"}`
+- Syntax for if-else:<br /> 
+    if [condition file]; <br />
+    then<br />
+    &emsp; statements<br />
+    else<br />
+    &emsp;    statements<br />
+    fi<br />
+- Conditions for if:
+    - Checks if the file exists: `-e`
+    - Checks if the file is a directory: `-d`
+    - Checks if the file is a regular file (i.e. not a symbolic link, device node, directory, etc.) : `-f`
+    - Checks if the file is of non-zero size: `-s`
+    - Checks if the file has [sgid](https://www.geeksforgeeks.org/finding-files-with-suid-and-sgid-permissions-in-linux/) set: `-g`
+    - Checks if the file has suid set: `-u`
+    - Checks if the file is readable: `-r`
+    - Checks if the file is writable: `-w`
+    - Checks if the file is executable: `-x`
+- Logical operators to be used with if[expression1 -operation expression2]:
+    - Equal to: `-eq`
+    - Not equal: `-ne
+	- Greater than: `-gt`
+	- Less than: `-lt`
+	- Greater than or equal to: `-ge`
+	- Less than or equal to: `-le`
+    - Compares the sorting order of string1 and string2: `[[ string1 > string2 ]]`
+    - Compares the characters in string1 with the characters in string2: `[[ string1 == string2 ]]`
+    - Saves the length of string1 in the variable myLen1: `myLen1=${#string1}`
+- Switch statement:<br />
+case expression in<br />
+   &emsp;pattern1)&emsp;execute commands ;;<br />
+   &emsp;pattern2)&emsp;execute commands ;;<br />
+   &emsp;pattern3)&emsp;execute commands ;;<br />
+   &emsp;pattern4)&emsp;execute commands ;;<br />
+   &emsp;*&ensp;)&emsp;execute some default commands or nothing ;;<br />
+esac
+- Three types of loops are often used in most programming languages:
+    - `for` loop:<br />
+        for variable-name in list<br />
+        do<br />
+        &emsp;execute one iteration for each item in the list until the list is finished<br />
+        done
+    - `while` loop:<br />
+        while condition is true<br />
+        do<br />
+        &emsp;Commands for execution<br />
+        done
+    - `until` loop; it repeats a set of statements as long as the control command is false:<br />
+        until condition is false<br />
+        do<br />
+        &emsp;Commands for execution<br />
+        done
+- To edit/debug a script(to exit: write `+ exit 0` at the end of file): `script.sh debug`
+- To create a temporary file: `TEMP=$(mktemp /tmp/tempfile.XXXXXXXX)`
+- To create a temporary directory: `TEMPDIR=$(mktemp -d /tmp/tempdir.XXXXXXXX)`
+- To generate a random number: `$RANDOM`
+- To get the length of a string: `${#string}` or `expr length $string`
+- Printing Operations:
+    - To print the file to default printer: `lp <filename>`
+    - To print to a specific printer (useful if multiple printers are available): `lp -d printer_id <filename>`
+    - To print the output of a program: `program | lp
+echo string | lp`
+    - To print multiple copies: `lp -n number <filename>`
+    - To set the default printer: `lpoptions -d printer`
+    - To show the queue status: `lpq -a`
+    - To configure printer queues: `lpadmin`
+    - To get a list of available printers, along with their status: `lpstat -p -d`
+    - To 

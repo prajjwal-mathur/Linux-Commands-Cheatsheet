@@ -204,4 +204,20 @@ echo string | lp`
     - To show the queue status: `lpq -a`
     - To configure printer queues: `lpadmin`
     - To get a list of available printers, along with their status: `lpstat -p -d`
-    - To 
+    - To check the status of all connected printers, including job numbers: `lpstat -a`
+    - To cancel a print job: `cancel job-id` OR `lprm job-id`
+    - To move a print job to new printer: `lpmove job-id newprinter`
+-  To convert a text file to two columns (-2) formatted PostScript using the command(enscript is a tool that is used to convert a text file to PostScript and other formats): `enscript -2 -r -p psfile.ps textfile.txt`
+- To convert a text file to PostScript (saved to psfile.ps): `enscript -p psfile.ps textfile.txt`
+- To convert a text file to n columns where n=1-9 (saved in psfile.ps): `enscript -n -p psfile.ps textfile.txt`
+- To print a text file directly to the default printer: `enscript textfile.txt`
+- To convert a pdf to post-script: `pdf2ps file.pdf` or `pdftops original.pdf converted_name.ps` or `convert original.pdf converted_name.ps`
+- To convert a post-script to pdf: `ps2pdf file.ps` or `pstopdf original.ps converted_name.pdf` or `convert original.ps converted_name.pdf`
+- To merge the two documents first.pdf and second.pdf to output.pdf: `qpdf --empty --pages first.pdf second.pdf -- output.pdf` or `pdftk first.pdf second.pdf cat output output.pdf`
+- To write only pages 1 and 2 of original.pdf to new.pdf: `qpdf --empty --pages original.pdf 1-2 -- new.pdf` or `pdftk A=original.pdf cat A1-2 output new.pdf`
+- To rotate page 1 of original.pdf by 90 degrees clockwise to rotated.pdf: `qpdf --rotate=+90:1 original.pdf rotated.pdf`
+- To rotate all pages of original.pdf 90 degrees clockwise and save to rotate-all.pdf: `qpdf --rotate=+90:1-z original.pdf rotated-all.pdf` or `pdftk A=original.pdf cat A1-endright output new.pdf`
+- To encrypt with 128 bits public.pdf with the passwd mypw with output as private.pdf: `qpdf --encrypt mypw mypw 128 -- public.pdf private.pdf` or `pdftk public.pdf output private.pdf user_pw PROMPT`
+- To decrypt private.pdf with output as file-decrypted.pdf: `qpdf --decrypt --password=mypw private.pdf file-decrypted.pdf`
+- To open a pdf(evince is a pdf viewing GUI): `evince xyz.pdf`
+- CUPS interface is available at: `http://localhost:631`

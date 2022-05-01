@@ -91,6 +91,7 @@ Both the above commands create a text file "xyz.txt" with creation date as 02-Ja
         - To quit: `:q`	
         - To quit without saving: `:q!`	
         - To count the words in a file in vim editor: `:! wc %`
+        - To go from vim terminal to vim editor: press `i`
 - To identify current user: `whoami`
 - To identify all logged-on user: `who`
 - To retrieve currently defined aliases: `alias`
